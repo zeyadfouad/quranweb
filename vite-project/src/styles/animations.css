@@ -1,0 +1,122 @@
+.fade-in {
+  animation: fadeIn 0.85s cubic-bezier(.2,0,.5,1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (hover: hover) {
+  .button-primary { transition: box-shadow .18s; }
+  .button-primary:hover {
+    box-shadow: 0 2px 12px #4994d41f;
+  }
+}
+
+.card-animate {
+  transition: box-shadow .23s cubic-bezier(.22,.65,.54,1.11), transform .18s cubic-bezier(.22, .68, .52, 1.05);
+}
+.card-animate:hover {
+  box-shadow: 0 14px 64px #a9743330, 0 3.5px 14px #a974332a;
+  transform: scale(1.055) rotate(-0.6deg);
+}
+
+.zoom-in {
+  animation: zoomIn 0.6s cubic-bezier(.5,0,.6,1);
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.slide-up {
+  animation: slideUp 0.75s cubic-bezier(.2,0,.5,1);
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* روابط الشريط العلوي */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  transition: transform .16s ease, color .16s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -3px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #fff 0%, #f6e7cc 100%);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .22s ease;
+  border-radius: 6px;
+}
+.nav-link:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* استجابة الهيدر للشاشات الصغيرة */
+.hamburger {
+  display: none;
+  width: 38px; height: 34px;
+  align-items: center; justify-content: center;
+  border: 2px solid #fff; border-radius: 10px;
+  background: transparent; color: #fff; cursor: pointer;
+}
+.hamburger span { display:block; width:20px; height:2px; background:#fff; position:relative; }
+.hamburger span::before, .hamburger span::after { content:""; position:absolute; left:0; right:0; height:2px; background:#fff; }
+.hamburger span::before { top:-6px; }
+.hamburger span::after { top:6px; }
+
+@media (max-width: 768px) {
+  .top-nav { display: none !important; }
+  .hamburger { display: flex; }
+}
+
+/* الشريط الجانبي */
+.drawer-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.25); z-index: 1300; }
+.drawer-panel { position: fixed; top:0; bottom:0; right:0; width: 78%; max-width: 320px; background: linear-gradient(160deg,#a97433 68%, #daba82 100%); box-shadow: -4px 0 22px #00000025; z-index: 1310; border-radius: 14px 0 0 14px; padding: 18px; color:#fff; transform: translateX(100%); transition: transform .25s ease; }
+.drawer-panel.open { transform: translateX(0); }
+.drawer-link { display:block; color:#fff; text-decoration:none; font-weight:700; padding: 10px 8px; border-radius:10px; margin: 4px 0; }
+.drawer-link:hover { background: rgba(255,255,255,.12); }
+
+/* أزرار الكاروسيل المتجاوبة */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(169,116,51,.95);
+  color: #fff;
+  border: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 6px 22px #a9743340;
+  transition: transform .15s ease, background .15s ease;
+  display:flex; align-items:center; justify-content:center;
+}
+.carousel-btn:hover { transform: translateY(-50%) scale(1.06); background: #b98d52; }
+.carousel-btn.left { right: 12px; }
+.carousel-btn.right { left: 12px; }
+
+@media (max-width: 768px) {
+  .carousel-btn { width: 36px; height: 36px; }
+  .carousel-btn.left { right: 8px; }
+  .carousel-btn.right { left: 8px; }
+}
+
+/* نقاط الكاروسيل */
+.carousel-dots { position:absolute; bottom:10px; left:0; right:0; display:flex; gap:8px; justify-content:center; }
+.carousel-dot { width:9px; height:9px; border-radius:50%; background:#e6d3b9; box-shadow:0 1px 4px #00000022; cursor:pointer; transition: transform .15s; }
+.carousel-dot:hover { transform: scale(1.15); }
+.carousel-dot.active { background:#a97433; }

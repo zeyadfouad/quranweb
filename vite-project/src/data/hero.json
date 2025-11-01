@@ -1,0 +1,25 @@
+{
+  "slides": [
+    {
+      "title": "تعلم قصص الأنبياء",
+      "subtitle": "اكتشف الدروس والعِبر بطريقة ممتعة",
+      "ctaText": "ابدأ الآن",
+      "ctaLink": "/stories",
+      "bg": "linear-gradient(120deg,#f7efe2 0%, #ead4b5 100%)"
+    },
+    {
+      "title": "آيات مختارة",
+      "subtitle": "اقرأ تفسيرًا مبسطًا وتعلّم المعاني",
+      "ctaText": "تصفح الآيات",
+      "ctaLink": "/ayat",
+      "bg": "linear-gradient(120deg,#fff7ee 0%, #f3e1c9 100%)"
+    },
+    {
+      "title": "تفسير السور",
+      "subtitle": "اختر السورة وشاهد تفسيرًا منظمًا",
+      "ctaText": "اذهب للتفسير",
+      "ctaLink": "/tafsir",
+      "bg": "linear-gradient(120deg,#fffaf6 0%, #eddabb 100%)"
+    }
+  ]
+}

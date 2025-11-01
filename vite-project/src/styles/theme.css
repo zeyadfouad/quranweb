@@ -1,0 +1,30 @@
+:root {
+  --main-bg: #f9f6f2;            /* بني فاتح خلفية رئيسية */
+  --accent: #a97433;             /* بني متوسط للعناصر والأزرار */
+  --success: #967959;            /* بني مخضر للرسائل */
+  --danger: #805144;             /* بني غامق للأخطاء */
+  --border-radius: 16px;
+  --text-black: #4e3018;         /* بني داكن للنص */
+  --modal-backdrop: rgba(100,70,50,0.16); /* ظل المودال */
+  --card-shadow: 0 2px 16px 0 rgba(133,75,10,0.07);
+}
+
+.card, .modal {
+  background: #fffaf6;            /* خلفية فاتحة للبطاقات والموديالات */
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75em 1.8em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.button-primary:hover {
+  background: #854d1e;
+}
