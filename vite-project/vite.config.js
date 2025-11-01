@@ -9,4 +9,18 @@ export default defineConfig({
     outDir: '../docs',
     emptyOutDir: true,
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+        rewrite: (path) => path,
+      },
+      '/ai': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+        rewrite: (path) => path,
+      },
+    },
+  },
 })
