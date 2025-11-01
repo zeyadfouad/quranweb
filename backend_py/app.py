@@ -1,12 +1,13 @@
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 import requests
 
-DB_PATH = 'users.db'
-DEEPSEEK_API_KEY = 'sk-8dbe5259936947afa0227952e60c1cb0'
-DEEPSEEK_MODEL = 'deepseek-chat'
+DB_PATH = os.environ.get('DB_PATH', 'users.db')
+DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY', 'sk-8dbe5259936947afa0227952e60c1cb0')
+DEEPSEEK_MODEL = os.environ.get('DEEPSEEK_MODEL', 'deepseek-chat')
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)
@@ -101,4 +102,5 @@ def root():
     return 'Flask + SQLite + DeepSeek proxy ready', 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port, debug=False)
