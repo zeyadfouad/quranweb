@@ -1,12 +1,11 @@
 import React, { useState } from "react";
+import { API_BASE } from "../config/api.js";
 
 export default function LoginPage() {
   const [tab, setTab] = useState('login');
   const [form, setForm] = useState({ name: '', email: '', pass: '', pass2: '' });
   const [loading, setLoading] = useState(false);
   const isRegister = tab === 'register';
-
-  const API_BASE = 'http://localhost:5001';
 
   const toast = (title, icon='info') => {
     if (window.Swal) window.Swal.fire({ title, icon, confirmButtonText: 'حسناً', confirmButtonColor: '#a97433' });

@@ -13,8 +13,10 @@ import './styles/globals.css';
 import { useEffect, useState } from 'react';
 import AIChatBox from './components/AIChatBox';
 
+import { API_BASE } from './config/api.js';
+
 async function sendToGemini(userMessage) {
-  const res = await fetch('http://localhost:5001/ai', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ input: userMessage }) });
+  const res = await fetch(`${API_BASE}/ai`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ input: userMessage }) });
   const data = await res.json();
   return data.ai || 'حدث خطأ مع خدمة الذكاء الاصطناعي';
 }
